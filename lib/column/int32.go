@@ -22,6 +22,10 @@ func (i *Int32) Write(encoder *binary.Encoder, v interface{}) error {
 		return encoder.Int32(int32(v))
 	case int:
 		return encoder.Int32(int32(v))
+	case int8:
+		return encoder.Int32(int32(v))
+	case int16:
+		return encoder.Int32(int32(v))
 
 	// this relies on Nullable never sending nil values through
 	case *int32:
